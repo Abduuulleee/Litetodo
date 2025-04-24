@@ -1,0 +1,184 @@
+/* Global styles */
+* {
+  list-style: number;
+  box-sizing: border-box; /* Correction pour un meilleur contrôle des dimensions */
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Conteneur principal */
+body {
+  background-color: rgb(15, 14, 14);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centré verticalement par défaut */
+  min-height: 100vh;
+  padding: 20px;
+  transition: all 0.3s ease; /* Transition fluide pour les changements */
+}
+
+/* Lorsque des actions sont présentes */
+body.actions-active {
+  justify-content: flex-start; /* Aligne le contenu en haut */
+  padding-top: 50px; /* Ajoute un espace en haut */
+}
+
+/* Formulaire */
+#formulaire {
+  width: 95%; /* Largeur flexible */
+  max-width: 700px; /* Limite la largeur sur les grands écrans */
+  margin: auto;
+  transition: all 0.3s ease; /* Transition fluide pour les changements */
+}
+
+#formulaire h2 {
+  text-align: center;
+  font-size: 3rem; /* Taille de police augmentée */
+  margin-bottom: 20px;
+}
+
+#formulaire label {
+  display: grid;
+}
+
+#saisieTodo {
+  padding: 15px; /* Augmenter la hauteur */
+  width: 100%;
+  margin: 25px 0px;
+  font-size: 1.2rem; /* Taille de police augmentée */
+  border-radius: 8px; /* Coins plus arrondis */
+  border: 1px solid #ccc;
+}
+
+/* Boutons */
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Permet aux boutons de passer à la ligne si nécessaire */
+  gap: 10px; /* Espacement réduit entre les boutons */
+}
+
+#delete,
+#delete-everything {
+  background-color: red;
+  width: 40%; /* Largeur réduite */
+  max-width: 150px; /* Limite la largeur sur les grands écrans */
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 10px; /* Hauteur réduite */
+  font-size: 1rem; /* Taille de police réduite */
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+#delete:hover,
+#delete-everything:hover {
+  background-color: black;
+  border: 2px solid red;
+  color: red;
+  cursor: pointer;
+}
+
+/* Liste des tâches */
+#todoList {
+  width: 95%; /* Largeur flexible */
+  max-width: 900px; /* Limite la largeur sur les grands écrans */
+  margin: 50px auto;
+  font-size: 1.8rem; /* Taille de police augmentée */
+}
+
+#todoList ul li {
+  cursor: pointer;
+  margin: 25px 0px; /* Espacement vertical augmenté */
+  padding: 15px; /* Augmenter la hauteur */
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Coins plus arrondis */
+  background-color: #222;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#todoList ul li:hover {
+  background-color: #444;
+  transform: scale(1.05); /* Mise en avant plus prononcée au survol */
+}
+
+.barre {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Animation tremblement */
+@keyframes tremble {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-5px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-5px);
+  }
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+#todoList ul li.tremble {
+  animation: tremble 0.4s ease-in-out;
+}
+
+/* Media Queries pour les petits écrans */
+@media (max-width: 768px) {
+  #formulaire h2 {
+    font-size: 3.5rem;
+  }
+
+  #todoList {
+    font-size: 1.5rem;
+  }
+
+  #delete,
+  #delete-everything {
+    width: 100%; /* Les boutons prennent toute la largeur sur les petits écrans */
+  }
+
+  #todoList ul li {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    padding: 12px;
+  }
+}
+
+/* Media Queries pour les très petits écrans */
+@media (max-width: 480px) {
+  #formulaire h2 {
+    font-size: 1.8rem;
+  }
+
+  #saisieTodo {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  #todoList {
+    font-size: 1.2rem;
+  }
+
+  #delete,
+  #delete-everything {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  #todoList ul li {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
