@@ -1,0 +1,106 @@
+* {
+  list-style: number;
+  box-sizing: content-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body {
+  background-color: rgb(15, 14, 14);
+  color: white;
+}
+
+#formulaire {
+  width: 50%;
+  margin: auto;
+}
+
+#formulaire h2 {
+  text-align: center;
+  font-size: 50px;
+}
+
+#formulaire label {
+  display: grid;
+}
+
+#saisieTodo {
+  padding: 10px;
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+#delete {
+  background-color: red;
+  width: 25%;
+  border: 2px solid red;
+  border-radius: 3px;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+#delete:hover {
+  background-color: black;
+  border: 2px solid red;
+  color: red;
+  cursor: pointer;
+}
+
+#delete-everything:hover {
+  background-color: red;
+
+  border: 2px solid red;
+  border-radius: 3px;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#delete-everything {
+  background-color: black;
+  border: 2px solid red;
+  color: red;
+  width: 25%;
+  padding: 10px;
+}
+#todoList {
+  width: 70%;
+  margin: 50px auto;
+  font-size: 30px;
+}
+
+#todoList ul li {
+  cursor: pointer;
+  margin: 40px 0px;
+}
+
+.barre {
+  text-decoration: line-through;
+}
+
+@keyframes tremble {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-3px);
+  }
+  40% {
+    transform: translateX(3px);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+}
+
+#todoList ul li.tremble {
+  animation: tremble 0.4s ease-in-out;
+}
