@@ -33,19 +33,6 @@ Cloner ce dépôt ou télécharger les fichiers
 
 Ouvrir le fichier index.html dans votre navigateur préféré
 
-bash
-git clone https://github.com/votre-nom-utilisateur/simpliest-todolist.git
-cd simpliest-todolist
-Utilisation
-Saisissez une tâche dans le champ de texte "Saisissez l'action..."
-
-Appuyez sur Entrée pour ajouter la tâche à votre liste
-
-Cliquez sur une tâche pour la marquer comme terminée
-
-Utilisez le bouton "DELETE" pour supprimer une tâche sélectionnée
-
-Utilisez le bouton "DELETE EVERYTHING" pour effacer toute votre liste
 
 Personnalisation
 Le code est volontairement minimaliste pour faciliter sa personnalisation. Vous pouvez modifier les styles dans le fichier CSS pour adapter l'apparence à vos préférences.
